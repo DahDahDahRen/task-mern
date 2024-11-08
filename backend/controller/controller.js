@@ -85,4 +85,9 @@ const deleteTaskController = asyncHandler(async (req, res, next) => {
   res.status(202).json({ status: true, id: task._id });
 });
 
-module.exports = { getTasksController };
+module.exports = {
+  getTasksController,
+  createTaskController,
+  updateTaskController,
+  deleteTaskController,
+};
