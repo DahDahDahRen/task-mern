@@ -60,7 +60,7 @@ const updateTaskController = asyncHandler(async (req, res, next) => {
   }
 
   //Find and update the task
-  const task = await Task.findByIdAndUpdate({ id }, req.body, { new: true });
+  const task = await Task.findByIdAndUpdate(id, req.body, { new: true });
 
   //Make a response to client
   res.status(202).json({ status: true, task });
@@ -71,8 +71,10 @@ const deleteTaskController = asyncHandler(async (req, res, next) => {
   //Get task id
   const { id } = req.params;
 
+  console.log(id);
+
   //Find and delete a task
-  const task = await Task.findByIdAndDelete({ id });
+  const task = await Task.findByIdAndDelete(id);
 
   //Check if task exist
   if (!task) {
