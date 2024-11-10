@@ -1,5 +1,7 @@
 import { ThemeProvider } from "@emotion/react";
 import GlobalStyled from "./components/styled/GlobalStyle.styled";
+import { StyledContainer } from "./components/styled/StyledContainer.styled";
+import Header from "./components/ui/Header";
 
 const theme = {
   colors: {
@@ -25,10 +27,11 @@ const theme = {
 function App() {
   return (
     <>
-      <GlobalStyled />
-
       <ThemeProvider theme={theme}>
-        <div>Hello World</div>
+        <GlobalStyled />
+        <StyledContainer>
+          <Header />
+        </StyledContainer>
       </ThemeProvider>
     </>
   );
