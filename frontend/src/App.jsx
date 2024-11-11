@@ -1,7 +1,11 @@
 import { ThemeProvider } from "@emotion/react";
 import GlobalStyled from "./components/styled/GlobalStyle.styled";
-import { StyledContainer } from "./components/styled/StyledContainer.styled";
 import Header from "./components/ui/Header";
+import TaskCard from "./components/ui/TaskCard";
+import { StyledContainer } from "./components/styled/StyledContainer.styled";
+import { StyledGrid } from "./components/styled/StyledGrid.styled";
+import { StyledGridBox } from "./components/styled/StyledGridBox.styled";
+import { StyledBoxShadow } from "./components/styled/StyledBoxShadow.styled";
 
 const theme = {
   colors: {
@@ -15,6 +19,7 @@ const theme = {
       accentFour: "#EF476F",
       accentFive: "#FFD166",
       accentSix: "#06D6A0",
+      accentSeven: "#1B263B",
     },
   },
   weight: {
@@ -30,7 +35,17 @@ function App() {
       <ThemeProvider theme={theme}>
         <GlobalStyled />
         <StyledContainer>
-          <Header />
+          <StyledBoxShadow>
+            <Header />
+            <StyledGrid>
+              <StyledGridBox>
+                <TaskCard>
+                  <p>Task Card</p>
+                </TaskCard>
+              </StyledGridBox>
+              <StyledGridBox>Side bar</StyledGridBox>
+            </StyledGrid>
+          </StyledBoxShadow>
         </StyledContainer>
       </ThemeProvider>
     </>
